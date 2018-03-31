@@ -1,0 +1,57 @@
+/* -----------------------------------
+
+	Template Name: LIRA
+    Template URI: https://devitems.com/html/lira-preview/
+    Description: This is html5 template
+    Author: BootExperts
+    Author URI: https://devitems.com/
+    Version: 1.0
+
+	NOTE: This is Header style file. All Header related style included in this file.
+
+--------------------------------------*/
+/* Header Top Area */
+.header-top {
+  padding: 10px 0;
+}
+.header-top-left p, .header-top-right ul li a {
+  color: #999;
+  margin: 8px 0;
+}
+.header-top-middle ul li a,.social-middle ul li a {
+  color: #999;
+  display: block;
+  font-size: 12px;
+  line-height: 27px;
+  padding: 6px 22px;
+}
+.social-middle ul li a{color:#707070;}
+.header-top-middle ul li a:hover{color:#fff;}
+.header-top-right ul li a {
+  padding: 25px 10px;
+}
+.menu-search-box {
+  margin-left: 35px;
+  padding-top: 7px;
+  position: relative;
+  width: 140px;
+}
+.menu-search-box form input {
+  background: #3d3d3d none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  height: 29px;
+  margin-right: -5px;
+  width: 100%;
+  padding-left:20px;
+}
+.menu-search-box form button {
+  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+  border: medium none;
+  color: #707070;
+  line-height: 29px;
+  position: absolute;
+  right: 0;
+}

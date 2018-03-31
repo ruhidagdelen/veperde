@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+    <section class="page-content-area ptb-120">
+        <div class="container">
+            <h1 class="text-center"> Eleştiri Ekle</h1>
+            <div class="contact-form">
+                {% block content %}
+                    <form id="contact-form" class="form-group" method="POST" action="." onsubmit="return check();">
+                        {% csrf_token %}
+                        <div class="col-md-12 pb-30">
+                            <div class="form-group">
+                                <label for="act">Oyun Seç:</label>
+                                <select name="act" required id="act" class="form-control mb-15">
+                                    {% for act in acts %}
+                                        <option value="{{ act.id }}"
+                                                {% if acto and act.id == acto.id %}selected="selected"{% endif %}>
+                                            {{ act.name|capfirst }}
+                                        </option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="form-button mb-20">
+                                <h5>Oyunu listede bulamadıysanız buradan ekleyebilirsiniz</h5>
+                                <button onclick="location.href='{% url 'main:addAct' %}'" type="button">Oyun Ekle</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Eleştiri Başlığı:</label>
+                                <input type="text" required
+                                       class="title-control"
+                                       id="title"
+                                       name="{{ form.title.name }}"
+                                       id="{{ form.title.id_for_label }}"
+                                       maxlength="{{ form.title.field.max_length }}"
+                                        {% if form.title.fieldname.required %} required {% endif %}>
+                            </div>
+                            <div class="form-group">
+                                <label for="text">Eleştiriniz:</label>
+                                    <div class="form-textarea ">
+                                    <textarea name="text" id="text" required
+                                              rows="10" class="form-control"></textarea>
+                                    </div>
+                            </div>
+
+                            <div class="form-button">
+                                <button id="myBtn" class="contact-submit" type="submit">Kaydet</button>
+                            </div>
+                        </div>
+                    </form>
+                {% endblock %}
+
+
+                <div id="myModal" class="modal">
+
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <h4 class="text-center">Editörümüz olası yazım hatalarını düzeltmek üzere yazınıza hızlıca göz atıyor. Eleştiriniz en geç 24 saat içinde yayında!</h4>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+{% include 'main/includes/footer.html' %}
+
+<script type="text/javascript">
+    function check(){
+        if ($('#title').val() != ""){
+            $('#myModal').modal('show');
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    $(document).ready(function() {
+        CKEDITOR.replace( 'text' );
+        CKEDITOR.config.removePlugins = 'elementspath,save,image,flash,iframe,link,smiley,tabletools,find,pagebreak,templates,about,maximize,showblocks,newpage,language';
+    });
+</script>
+</body>
+</html>

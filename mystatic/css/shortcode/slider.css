@@ -1,0 +1,251 @@
+/* -----------------------------------
+
+	Template Name: LIRA
+    Template URI: https://devitems.com/html/lira-preview/
+    Description: This is html5 template
+    Author: BootExperts
+    Author URI: https://devitems.com/
+    Version: 1.0
+
+	NOTE: This is Slider style file. All Slider related style included in this file.
+
+--------------------------------------*/
+/* Slide Area Start */
+.plrtb {
+  padding: 0;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.f-left.middle {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.single-left {
+  display: block;
+  padding-right: 5px;
+  width: 24.3%;
+}
+.single-middle {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 51.4%;
+}
+.single-right {
+  display: block;
+  padding-left: 5px;
+  width: 24.3%;
+}
+.slide-single img {
+  width: 100%;
+}
+.single-middle,.single-middle{
+  position:relative;
+  display:block;
+}
+.main-slide-area .owl-theme .owl-dots,.main-slide-area .owl-theme .owl-nav {
+  bottom: 23px;
+  margin: 0;
+  position: absolute;
+  right: 65px;
+  text-align: right;
+}
+.main-slide-area .owl-theme .owl-nav [class*="owl-"] {
+  background: transparent none repeat scroll 0 0;
+  border-radius: 3px;
+  color: #8a8a8a;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 5px;
+  padding: 0;
+  transition:.3s;
+}
+.main-slide-area .owl-theme .owl-dots,.main-slide-area .owl-theme .owl-nav::before {
+  color: #8a8a8a;
+  content: "/";
+  height: 0;
+  left: 23px;
+  margin: 0 auto;
+  padding: 8px;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 0;
+}
+.main-slide-area .owl-theme .owl-nav [class*="owl-"]:hover {
+  background: transparent none repeat scroll 0 0;
+  color: #fff;
+  text-decoration: none;
+}
+.slidemdl-single {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.slide-content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  left: 0;
+  margin: 0 80px;
+  padding: 45px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 33.3%;
+}
+.slide-content p {
+  padding: 0 10%;
+}
+.slide-content a {
+  color: #b3b3b3;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0;
+  transition:.4s;
+}
+.slide-content a:hover{color:#fff;}
+.animate-one {
+  -webkit-animation: 1500ms linear 0s normal none 1 running flipInX;
+  -moz-animation: 1500ms linear 0s normal none 1 running flipInX;
+  -ms-animation: 1500ms linear 0s normal none 1 running flipInX;
+  animation: 1500ms linear 0s normal none 1 running flipInX;
+}
+.animate-two {
+  -webkit-animation: 1500ms linear 3s normal none 1 running flipInY;
+  -moz-animation: 1500ms linear 3s normal none 1 running flipInY;
+  -ms-animation: 1500ms linear 3s normal none 1 running flipInY;
+  animation: 1500ms linear 3s normal none 1 running flipInY;
+}
+.animate-three{
+  -webkit-animation: 2000ms linear 5s normal none 1 running rollIn;
+  -moz-animation: 2000ms linear 5s normal none 1 running rollIn;
+  -ms-animation: 2000ms linear 5s normal none 1 running rollIn;
+  animation: 2000ms linear 5s normal none 1 running rollIn; 
+}
+/*----------------------------------------*/
+/*  Nivo Slider
+/*----------------------------------------*/
+.pos_description .title1 .txt {
+  animation: 1000ms linear 0s normal none 1 running fadeInLeft;
+  color: #303030;
+  display: inline-block;
+  font-family: open sans;
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0 25%;
+  text-transform: capitalize;
+}
+.pos_description .title2 .txt {
+  animation: 1500ms linear 0s normal none 1 running flipInX;
+  border-radius: 5px;
+  color: #303030;
+  display: inline-block;
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 65px;
+  text-transform: uppercase;
+}
+.pos-slideshow-readmore {
+  margin-top: 10px;
+}
+.pos_description .pos-slideshow-readmore a {
+  animation: 2000ms linear 0s normal none 1 running flipInX;
+  border-radius: 5px;
+  color: #303030;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.pos_description .pos-slideshow-readmore a:hover{
+  color:#717171;
+}
+.slider-area .nivo-caption {
+  background: transparent none repeat scroll 0 0;
+  box-sizing: border-box;
+  color: #fff;
+  display: none;
+  left: 0;
+  opacity: 1;
+  overflow: hidden;
+  position: absolute;
+  top: 38%;
+  width: 100%;
+  z-index: 8;
+  text-align:center;
+}
+.slider-area .nivo-directionNav a {
+  background-color: transparent;
+  bottom: 22px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 23px;
+  margin-right: 80px;
+  position: absolute;
+  right: 5%;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+}
+.slider-area .nivo-directionNav a:hover {
+  color: #999;
+}
+.slider-area .nivo-directionNav a.nivo-nextNav {
+  right: 55px;
+}
+.nivo-directionNav a.nivo-nextNav::before {
+  content: "/";
+  font-size: 15px;
+  left: -14px;
+  position: absolute;
+  top: 6px;
+  transform: rotate(10deg);
+}
+.slider-area .nivo-directionNav a.nivo-prevNav {
+  right: 45px;
+}
+.slider-area .nivo-directionNav a.nivo-nextNav {
+  right: 0;
+}
+.slider-area .nivo-controlNav {
+  bottom: 20px;
+  left: 0;
+  margin: 0 auto;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  z-index: 9;
+}
+.nivo-controlNav::after {
+  background: transparent url("../img/icon/dot_bg.png") no-repeat scroll right center;
+  content: "";
+  display: inline-block;
+  height: 15px;
+  padding-left: 5px;
+  width: 45px;
+}
+.nivo-controlNav::before {
+  background: transparent url("../img/icon/dot_bg.png") no-repeat scroll left center;
+  content: "";
+  display: inline-block;
+  height: 15px;
+  padding-right: 5px;
+  width: 45px;
+}
+
+.home-5 .slider-area .nivo-caption {
+  left: 5%;
+  width: 1000px;
+}
+
+.home-six .slider-area .nivo-caption {
+  left: 0%;
+  padding: 0 22%;
+}

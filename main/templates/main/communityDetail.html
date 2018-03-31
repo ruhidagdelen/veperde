@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <!-- Header Banner Area Start -->
+   <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+
+    <section class="page-content-area pb-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 pt-25">
+                    <div class="post-content">
+                        <div class="post-titel-author pt-10 pb-15">
+                            <h4>{{ community.name }}</h4>
+                            <p>{{ community.about }}</p>
+                        </div>
+                    </div>
+                    <div class="list-style sm-mb-25">
+                        <!-- Section Titel -->
+                        <div class="sml-titel">
+                            <h5>Oyunlar</h5>
+                        </div>
+                        <!-- Section Titel -->
+                        <ul>
+                            {% for act in community.act_set.all %}
+                                <li>
+                                    <a href="{% url 'main:detail' act.id %}">{{ act.name }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Order Unorder List -->
+            </div>
+        </div>
+    </section>
+</div>
+
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

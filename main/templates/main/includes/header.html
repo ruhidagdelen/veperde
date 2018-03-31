@@ -1,0 +1,162 @@
+{% load staticfiles %}
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>veperde</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'img/icon/favicon.ico' %}">
+<!-- Place favicon.ico in the root directory -->
+
+
+<!-- all css here -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/nivo-slider.css' %}">
+<link rel="stylesheet" href="{% static 'css/icofont.css' %}">
+<link rel="stylesheet" href="{% static 'css/material-design-iconic-font.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+<link rel="stylesheet" href="{% static 'css/shortcode/shortcodes.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
+<link rel="stylesheet" href="{% static 'css/critics.css' %}">
+<link rel="stylesheet" href="{% static 'css/pop-up.css' %}">
+
+<script src="{% static 'js/vendor/modernizr-2.8.3.min.js' %}"></script>
+
+<!-- Body main wrapper start -->
+<div class="wrapper home-six">
+    <!-- Start of header area -->
+    <header class="header-area header-wrapper">
+        <!-- Header top area start -->
+        <div class="header-top light-black-bg">
+            <div class="container-fluid plr-80 sm-p-0">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                        <div class="header-top-left">
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                        <div class="header-top-middle text-center">
+                            <ul>
+                                <li><a href="https://www.facebook.com/VeperdeVeperde/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://twitter.com/_Veperde"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://instagram.com/_veperde"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12 col-sm-12">
+                        <div class="header-top-right text-right">
+                            <ul class="mt-10">
+                                {% if request.user.is_authenticated %}
+                                    <li><p class="text-white">{{ request.user.username }} <a
+                                            href="{% url 'main:profile' %}">Profilim</a>
+                                        <a href="{% url 'logout' %}">Çıkış Yap</a></p></li>
+                                {% endif %}
+                                {% if not request.user.is_authenticated %}
+                                    <li><a href="{% url 'login' %}">Giriş Yap</a></li>
+                                    <li><a href="{% url 'main:addUser' %}">Kaydol</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header top area End -->
+        <!-- Header Menu Area Start -->
+        <div class="header-menu" >
+            <div class="container-fluid plr-80">
+                <div class="row">
+                    <div class="veperdelogo">
+                        <!-- Expand Menu -->
+                        <div class="col-md-2 col-sm-10">
+                            <!-- Logo Area -->
+                            <div class="mt-20 ">
+                                <a href="{% url 'main:index' %}"><img src="{% static 'img/icon/logo.png' %}"
+                                                                      height="90px" width="auto" alt=""/></a>
+                            </div>
+                            <!-- Logo Area -->
+                        </div>
+                    </div>
+                    <!-- Expand Menu -->
+                    <div class="col-md-10">
+                        <!-- Menu Area -->
+                        <div class="main-menu">
+                            <nav>
+                                <ul id="nav">
+                                    <li><a href="{% url 'main:index' %}">ANASAYFA</a></li>
+                                    {% if request.user.is_authenticated %}
+                                        <li><a href="{% url 'main:addUser' %}">HAKKIMIZDA</a>
+                                        </li>
+                                    {% endif %}
+                                    <li><a href="{% url 'main:acts' %}">OYUNLAR</a></li>
+                                    <li><a href="{% url 'main:critic' %}">ELEŞTİRİLER</a></li>
+                                    {% if request.user.is_authenticated %}
+                                        <li><a href="{% url 'main:addCritic' %}">ELEŞTİRİ EKLE</a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if request.user.is_superuser %}
+                                        <li><a href="{% url 'main:addAct' %}">OYUN EKLE</a>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if not request.user.is_authenticated %}
+                                        <li><a href="{% url 'main:addUser' %}">YAZAR OLUN</a></li>
+                                    {% endif %}
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Menu Area -->
+                        <!-- MOBILE-MENU-AREA START -->
+                        <div class="mobile-menu-area">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="mobile-area">
+                                            <div class="mobile-menu">
+                                                <nav id="mobile-nav">
+                                                    <ul id="nav">
+                                                        <li class="active"><a href="{% url 'main:index' %}">ANASAYFA</a>
+                                                        </li>
+                                                        <li><a href="{% url 'main:critic' %}">ELEŞTİRİLER</a></li>
+                                                        {% if request.user.is_authenticated %}
+                                                            <li><a href="{% url 'main:addCritic' %}">ELEŞTİRİ EKLE</a>
+                                                            </li>
+                                                        {% endif %}
+                                                        <li><a href="{% url 'main:acts' %}">OYUNLAR</a></li>
+                                                        {% if request.user.is_superuser %}
+                                                            <li><a href="{% url 'main:addAct' %}">OYUN EKLE</a>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if request.user.is_authenticated %}
+                                                            <li><a href="{% url 'main:addUser' %}">HAKKIMIZDA</a>
+                                                            </li>
+                                                        {% endif %}
+                                                        {% if not request.user.is_authenticated %}
+                                                            <li><a href="{% url 'main:addUser' %}">YAZAR OLUN</a></li>
+                                                        {% endif %}
+                                                    </ul>
+                                                </nav>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- MOBILE-MENU-AREA END  -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Menu Area End -->
+    </header>
+    <!-- End of header area -->
+</div>

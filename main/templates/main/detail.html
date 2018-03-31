@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <!-- Header Banner Area Start -->
+    <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+    <!-- Header Banner Area Start -->
+    <!-- Page Content Start -->
+    <section class="page-content-area pb-60">
+        <div class="container">
+            <div class="row">
+                <!-- Blog Large Image Single Item -->
+                <!-- Titel Here -->
+                <div class="col-md-8 col-sm-12 col-xs-12">
+                    <div class="as-titel">
+                        <h2 class="text-uppercase">{{ act.name }}</h2>
+                        <p>{% autoescape off %}{{ act.preview }}{% endautoescape %}</p>
+                    </div>
+                    <div class="as-titel">
+                        <h4>Bu Oyuna Yapılan Eleştiriler</h4>
+                        {% if not act.critic_set.all %}
+                            <h5 class="pb-15">
+                                <a href="{% url 'main:addCritic' %}"> İlk eleştiriyi siz yapın!</a>
+                            </h5>
+                        {% endif %}
+                    </div>
+                    <div class="as-titel">
+                        {% for critic in act.critic_set.all %}
+                            {% if critic.is_approved %}
+                                <div>
+
+                                <h5><span style="font-weight:bold"><a href="{% url 'main:critic_detail' critic.id %}">{{ critic.title }}</a> </span><span>/ {{ critic.editor }}</span></h5>
+
+                                    <div class="post-srt-content">
+                                        <p>{% autoescape off %}{{ critic.get_short_text }}{% endautoescape %}</p><p class="border-bottom"> <a href="{% url 'main:critic_detail' critic.id %}">Devamını oku</a></p>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Titel Here -->
+                <!-- Leave Comment Area Start -->
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="blog-single-post pb-30">
+                        {% if act.image %}
+                            <div>
+                                <img src="{{ act.image.url }}" class="img-responsive"/>
+                            </div>
+                        {% endif %}
+                        <div class="post-content">
+                            <div class="post-titel-author mt-10">
+                                <h3>{{ act.name }}</h3>
+                                <p>
+                                    <a href="{% url 'main:communityDetail' act.community.id %}"><strong>{{ act.community }}</strong></a><br>
+                                    <strong>Yazan:</strong> {{ act.author }}<br>
+                                    <strong>Yöneten:</strong> {{ act.director }}<br>
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'main:changeAct' act.id %}">Düzenle</a>
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Large Image Single Item -->
+            </div>
+        </div>
+    </section>
+    <!-- Page Content End -->
+</div>
+
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

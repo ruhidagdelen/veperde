@@ -1,0 +1,539 @@
+/* Laptop Scrren :1170px. */
+
+@media (min-width: 1400px){
+    .veperdebanner img{
+        width:100%;
+        height:auto;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+
+
+@media (min-width: 1170px) and (max-width: 1400px) {
+    .slide-content {
+        margin: 0;
+        top: 20%;
+    }
+
+    .veperdebanner img{
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1200px) {
+    .veperdebanner img{
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    .post-srt-content > p {
+        width: 550px;
+    }
+    .container {
+        width: 970px
+    }
+
+    .custom-container {
+        width: 970px;
+    }
+
+    .slide-content p {
+        display: none;
+    }
+
+    .slide-content {
+        margin: 0 40px;
+        top: 25%;
+    }
+
+    .slide-content h1 {
+        font-size: 30px;
+    }
+
+    .home-six .slider-area .nivo-caption {
+        left: 12%;
+        padding: 0;
+    }
+
+    .popular-content > p {
+        display: none;
+    }
+
+    .add-text > p {
+        top: 25%;
+    }
+
+    .add-text {
+        top: 20px;
+    }
+
+    .slider-area .nivo-caption {
+        top: 30%;
+    }
+
+    .pos_description .title1 .txt {
+        padding: 0 18%;
+    }
+
+    .gallery-post-single:hover .gp-hover h4 {
+        transform: translateY(160px);
+    }
+
+    .right-bnr-cnt {
+        display: none;
+    }
+
+    .per-contnt {
+        padding-bottom: 50px;
+    }
+
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        width: 750px
+    }
+
+    .custom-container {
+        width: 750px;
+    }
+
+    .main-menu {
+        display: block;
+    }
+
+    .mobile-menu-area {
+        display: none;
+    }
+
+    .logo-area {
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .main-menu {
+        float: none;
+        text-align: center;
+    }
+
+    .slide-content p {
+        display: none;
+    }
+
+    .slide-content {
+        margin: 0 40px;
+        top: 15%;
+    }
+
+    .home-six .slider-area .nivo-caption {
+        left: 0;
+        padding: 0 20%;
+    }
+
+    .home-six .pos_description .title1 .txt {
+        padding: 0 12%;
+    }
+
+    .slide-content h1 {
+        font-size: 26px;
+    }
+
+    .header-top-left, .header-top-right {
+        text-align: center;
+    }
+
+    .header-top-right {
+        margin-bottom: 15px;
+    }
+
+    .popular-content > p {
+        display: none;
+    }
+
+    .main-menu ul > li > a {
+        padding: 30px 8px 15px;
+    }
+
+    .main-menu ul#nav li .mega-menu {
+        width: 775px;
+    }
+
+    .main-menu ul#nav li .mega-menu .single > li > a {
+        margin: 0 20px;
+    }
+
+    .slider-area .nivo-caption {
+        top: 30%;
+    }
+
+    .pos_description .title2 .txt {
+        font-size: 30px;
+        line-height: 48px;
+    }
+
+    .pos_description .title1 .txt {
+        padding: 0 18%;
+    }
+
+    .footer-menu {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .footer-bottom-right {
+        text-align: center;
+    }
+
+    .home-5 .slider-area .nivo-caption {
+        left: 0;
+        width: 750px;
+    }
+
+    .slider-area .nivo-caption {
+        top: 25%;
+    }
+
+    .home-five .add-text > p {
+        padding: 0;
+        top: 50%;
+    }
+
+    .home-five .add-text {
+        top: 55px;
+    }
+
+    .per-contnt {
+        padding-bottom: 50px;
+        width: 100%;
+        float: none;
+    }
+
+    .per-img {
+        display: none;
+    }
+
+    .gallery-post-single:hover .gp-hover h4 {
+        transform: translateY(110px);
+    }
+
+    .notfound_content p {
+        padding: 0;
+    }
+
+    .right-bnr-cnt {
+        display: none;
+    }
+
+    .sticky {
+        position: unset;
+    }
+
+    .veperdelogo div {
+        display: none;
+    }
+    .veperdepost{
+        max-width:400px;
+    }
+    .veperdebanner img{
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+    }
+
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+    .veperdebanner {
+        display: none;
+    }
+    .post-srt-content > p {
+        width: 100%;
+    }
+    .veperdelogo {
+        width: 100%;
+        margin-left: 25%;
+    }
+    .yazaroltext{
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+    .yazaroltext p{
+        font-size:10px;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+
+    .container {
+        width: 300px
+    }
+
+    .main-menu {
+        display: none;
+    }
+
+    .mobile-menu-area {
+        display: block;
+        margin-bottom: 35px;
+    }
+
+    .logo-area {
+        margin-bottom: 25px;
+        text-align: center;
+    }
+
+    .plrtb {
+        padding: 50px 0;
+    }
+
+    .slide-content {
+        display: none;
+    }
+
+    .main-slide-area .owl-theme .owl-dots, .main-slide-area .owl-theme .owl-nav {
+        bottom: 5px;
+        right: 20px;
+    }
+
+    .header-top-left, .header-top-right {
+        text-align: center;
+    }
+
+    .header-top-right {
+        margin-bottom: 15px;
+    }
+
+    .header-area {
+        display: block;
+        overflow: hidden;
+    }
+
+    .footer-menu {
+        display: none;
+    }
+
+    .sm-mt-50 {
+        margin-top: 50px;
+    }
+
+    .sm-mb-25 {
+        margin-bottom: 25px;
+    }
+
+    .header-top-middle ul li a {
+        padding: 5px 10px;
+    }
+
+    .header-top-right ul li a {
+        display: block;
+        padding: 0 0 0 10px;
+    }
+
+    .light-black-bg {
+        padding: 0 30px;
+    }
+
+    .sm-p-0 {
+        padding: 0;
+    }
+
+    .plr-80 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .footer-bottom-right {
+        text-align: center;
+    }
+
+    .home-five .blog-ph {
+        float: none;
+        margin-bottom: 25px;
+        margin-right: 0;
+    }
+
+    .home-five .blog-ph img {
+        width: 100%;
+    }
+
+    .home-five iframe {
+        width: 100%;
+    }
+
+    .per-contnt {
+        padding-bottom: 50px;
+        width: 100%;
+        float: none;
+    }
+
+    .per-img {
+        display: none;
+    }
+
+    .fres-single {
+        width: 100%;
+    }
+
+    .aligen-img {
+        float: none;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .list-style {
+        width: 100%;
+    }
+
+    .form-button button {
+        width: 60%;
+    }
+
+    .column-4 {
+        width: 100%;
+    }
+
+    .gallery-post-single:hover .gp-hover h4 {
+        transform: translateY(130px);
+    }
+
+    .gp-hover a {
+        top: 33%;
+    }
+
+    .contact-single {
+        padding-right: 0px;
+        width: 100%;
+    }
+
+    .notfound_content p {
+        padding: 0;
+    }
+
+    .right-bnr-cnt {
+        display: none;
+    }
+
+    .left-bnr-cnt {
+        float: none;
+        margin: 0;
+        padding: 30px 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .blog-ph .pst-titel a {
+        left: -73px;
+        top: 92px;
+    }
+
+    .sticky {
+        position: unset;
+    }
+
+    .menu-search-box {
+        left: 0;
+        margin: 0 5px 0 auto;
+        right: 0;
+        width: 65%;
+    }
+
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .veperdebanner {
+        display: none;
+    }
+
+    .veperdelogo {
+        width: 100%;
+        margin-left: 35%;
+    }
+
+    .yazaroltext{
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+    .yazaroltext p{
+        font-size:10px;
+        width:100%;
+        margin:0;
+        padding:0;
+    }
+    .post-srt-content > p {
+        width: 100%;
+    }
+
+    .container {
+        width: 450px
+    }
+
+    .slide-content {
+        display: block;
+    }
+
+    .slide-content p {
+        display: none;
+    }
+
+    .slide-content {
+        margin: 0 30px;
+        top: 20%;
+    }
+
+    .slide-content h1, .slide-content a {
+        font-size: 12px;
+    }
+
+    .slide-content h1 {
+        font-size: 16px;
+    }
+
+    .main-slide-area .owl-theme .owl-dots, .main-slide-area .owl-theme .owl-nav {
+        bottom: 5px;
+        right: 30px;
+    }
+
+    .add-text {
+        top: 38px;
+    }
+
+    .gallery-post-single:hover .gp-hover h4 {
+        transform: translateY(228px);
+    }
+
+    .gp-img > img {
+        width: 100%;
+    }
+
+    .gp-hover a {
+        top: 40%;
+    }
+
+    .contact-single {
+        padding-right: 0px;
+        width: 50%;
+    }
+
+    .blog-ph .pst-titel a {
+        top: 148px;
+    }
+
+    .menu-search-box {
+        margin-left: 35px;
+        width: 140px;
+    }
+
+}
+

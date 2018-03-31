@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+
+<!-- Page Content Start -->
+<section class="page-content-area pt-170 pb-185">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="notfound_content text-center">
+                    <img src="{% static 'img/icon/404.png' %}" alt=""/>
+                    <h2>Aradığınız Sayfayı Bulamadık</h2>
+                    <a class="back_to mt-30" href="{% url 'main:index' %}">ANASAYFAYA DÖN</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Page Content End -->
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

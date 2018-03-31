@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <section class="container pt-60 pb-180">
+        <h1 class="text-center pb-60 border-bottom">Onay Bekleyenler</h1>
+        <div class="row pb-120">
+            <!-- Content Left Area -->
+            {% for critic in critics %}
+                <div class="col-md-9 col-sm-12 pb-15">
+                    <div class="critics border-bottom">
+                        <div class="critics-img">
+                            {% if critic.act.image %}
+                                <a href="{% url 'main:critic_detail' critic.id %}">
+                                    <img src="{{ critic.act.image.url }}" alt=""/></a>
+                            {% endif %}
+                            {% if not critic.act.image %}
+                                <a href="{% url 'main:critic_detail' critic.id %}">
+                                    <img src="{% static 'img/blog/home-3/small/1.jpg' %}" alt=""/></a>
+                            {% endif %}
+                        </div>
+                        <div class="critics post-content ml-15" style='display:inline'>
+                            <div class="critics-text post-srt-content pb-5">
+                                <h5><a href="{% url 'main:critic_detail' critic.id %}">{{ critic.title }}
+                                    / {{ critic.editor }} </a>
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'main:approveC' critic.id %}"> - onayla</a>
+                                        <a href="{% url 'main:deleteCritic' critic.id %}">- sil</a>
+                                    {% endif %}
+                                    <div class="critics-text post-srt-content pb-5">
+                                        <p>{% autoescape off %}{{ critic.text|slice:"250" }}{% endautoescape %}</p>
+                                    </div>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+
+{% include 'main/includes/footer.html' %}
+</body>
+</html>

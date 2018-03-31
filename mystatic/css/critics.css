@@ -1,0 +1,54 @@
+.critics .critics-img img{
+        height:100px;
+        width:150px;
+    }
+
+@media (min-width: 1170px) and (max-width: 1400px) {
+    .critics{
+  display:flex;
+}
+
+    .critics a .critics-img{
+        height:100px;
+        width:150px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+    .critics{
+  display:flex;
+}
+    .critics .critics-img img{
+        height:100px;
+        width:150px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .critics{
+  display:flex;
+}
+    .critics-text p, .critics-text h5{width:300px;}
+    .critics .critics-img img{
+        height:180px;
+        width:240px;
+    }
+}
+@media (max-width: 767px) {
+    .critics{
+  display:block;
+}
+    .critics-text p, .critics-text h5{width:300px;}
+    .critics .critics-img img{
+        height:180px;
+        width:240px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .critics{
+  display:block;
+}
+    .critics-text p, .critics-text h5{width:300px;}
+    .critics .critics-img img{
+        height:180px;
+        width:240px;
+    }
+}

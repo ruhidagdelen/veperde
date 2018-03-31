@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <div class="veperdebanner col-lg-12 col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+    <!-- Main Slide Top Area Start -->
+
+    <section class="page-content-area pt-60 pb-120" style="height:100%">
+        <div class="container">
+            <!-- Content Left Area -->
+            {% for item in item_list %}
+                <!-- Blog Small Image Single Item -->
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 pb-60">
+                        <div class="blog-img">
+                        <p style="font-size:20px; text-align: center;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a href="{% url 'main:detail' item.act.id %}">{{ item.act.name }}</a></p>
+                            {% if item.act.image %}
+                                <a href="{% url 'main:detail' item.act.id %}"><img src="{{ item.act.image.url }}" class="img-responsive" alt=""/></a>
+                            {% else %}
+                                <a href="{% url 'main:detail' item.act.id %}"><img src="{% static 'img/blog/home-3/small/1.jpg' %}" class="img-responsive" alt=""/></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-6 pb-60">
+                        {% for critic in item.critics %}
+                        <div class="post-content">
+                            <div class="post-title-author pb-5" {% if forloop.counter == 1 %}style="padding-top: 38px;"{% endif %}>
+                                <h4><span style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; font-weight:bold;"><a href="{% url 'main:critic_detail' critic.id %}">{{ critic.title }}</a></span><span><small> / {{ critic.editor.username }} / {{ critic.get_pub_date }}</small></span></h4>
+                            </div>
+                            <p class="border-bottom">{{ critic.get_short_text|safe }} <a class="pull-right" href="{% url 'main:critic_detail' critic.id %}">Devamını oku</a></p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Blog Small Image Single Item -->
+            {% endfor %}
+            <!-- Pager Previous Next Button -->
+        </div>
+    </section>
+</div>
+
+<!-- Page Content End -->
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+    <meta property="og:title" content="{{ critic.title }}">
+    <meta property="og:site_name" content="VePerde">
+    <meta property="og:url" content="{{ fb_share }}">
+    <meta property="og:description" content="{{ critic.get_short_text }}">
+    {% if critic.act.image %}
+        <meta property="og:image" content="{{ critic.act.image.url }}">{% endif %}
+    <meta property="og:type" content="article">
+</head>
+<body>
+<div class="wrapper">
+    {% load staticfiles %}
+    {% load social_share %}
+    <!-- Header Banner Area Start -->
+    <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+    <!-- Header Banner Area Start -->
+    <!-- Page Content Start -->
+    <section class="page-content-area pb-60">
+        <div class="container">
+            <div class="row">
+                <!-- Content Left Area -->
+                <!-- Blog Large Image Single Item -->
+                <div class="blog-single-post pb-30" style="display:inline-block; width:100%">
+                    <div class="col-md-8 col-sm-12 col-xs-12 post-content">
+                        <div class="post-titel-author">
+                            <h3><a href="{% url 'main:detail' critic.act.id %}"> {{ critic.act.name }}</a></h3>
+                            <p><a
+                                    href="{% url 'main:communityDetail' critic.act.community.id %}">{{ critic.act.community }}</a>
+                            </p>
+                        </div>
+                        <div>
+                            <h3><a href="#">{{ critic.title }}</a></h3>
+                            <p>{% autoescape off %}{{ critic.text }}{% endautoescape %}</p>
+
+                        </div>
+                        <div class="post-titel-author">
+                            <span><a href="#">{{ critic.editor }}</a> / {{ critic.pub_date }}
+
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'main:deleteCritic' critic.id %}">sil</a> -
+                                    <a href="{% url 'main:updateCritic' critic.id %}">güncelle</a>
+                                    {% if not critic.is_approved %}
+                                        - <a href="{% url 'main:approveC' critic.id %}">onayla</a>
+                                    {% endif %}
+                                {% else %}
+                                    {% if not request.user.is_superuser and critic.editor.username == request.user.username %}
+                                        <a href="{% url 'main:updateCritic' critic.id %}"> - güncelle</a>
+                                    {% endif %}
+                                {% endif %}
+                            </span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 mt-10" style="font-weight: bold">
+                                PAYLAŞ
+                            </div>
+                            <div class="col-md-9 social-middle">
+                                <ul>
+                                    <li><a target="popup"
+                                           onclick="window.open('https://www.facebook.com/sharer/sharer.php?u={{ fb_share }}','popup','width=600,height=600'); return false;"
+                                           href="https://www.facebook.com/sharer/sharer.php?u={{ fb_share }}"><i
+                                            class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a target="popup"
+                                           onclick="window.open('http://twitter.com/intent/tweet?text={{ critic.get_twt_text }}','popup','width=600,height=600'); return false;"
+                                           href="http://twitter.com/intent/tweet?text={{ critic.get_twt_text }}"><i
+                                            class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        {% if not critic.is_approved %}
+                            <h2 class="pt-30">Onay Bekleniyor!</h2>
+                        {% endif %}
+
+                    </div>
+                    <div class="col-md-4 col-sm-12 col-xs-12" style="float:left">
+                        {% if critic.act.image %}
+
+                            <img src="{{ critic.act.image.url }}" class="img-responsive"/>
+
+                        {% endif %}
+                        <!-- Titel Here -->
+                        <div>
+                            <div class="as-titel mt-15">
+                                <h4 class="text-center border-bottom pb-15">Yorumlar</h4>
+                                <!-- Titel Here -->
+                                {% if not critic.comment_set.all %}
+                                    <h5 class="pb-15">İlk yorumu siz yapın</h5>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <!-- Leave Comment Area Start -->
+                        {% for comment in critic.comment_set.all %}
+
+                            <div class="ml-5">
+                    <span>{{ comment.author }} / {{ comment.pub_date }}
+                        {% if request.user.is_superuser %}
+                            <a href="{% url 'main:deleteComment' comment.id %}">- Yorumu sil</a>
+                        {% endif %}
+                    </span>
+                                <p class="pb-10 border-bottom">{{ comment.text }}</p>
+
+                            </div>
+                        {% endfor %}
+
+                        {% block content %}
+                            <div class="col-sm-12 col-xs-12 pl-0 leave-comment">
+                                <form id="contact-form" class="form-group" method="POST" action="#">
+                                    {% csrf_token %}
+                                    <div class="m-0">
+                                        <div class="form-textarea" style="width:200px">
+                                    <textarea name="author" required id="message" placeholder="Adınız"
+                                              rows="1" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-textarea">
+                                    <textarea name="text" required id="message" placeholder="Yorumunuz"
+                                              rows="4" class="form-control"></textarea>
+                                        </div>
+                                        <div class="form-button">
+                                            <button class="contact-submit" type="submit">YORUMU KAYDET</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        {% endblock %}
+                        <!-- Leave Comment Area End -->
+                    </div>
+                </div>
+                <!-- Blog Large Image Single Item -->
+            </div>
+        </div>
+        <!-- Content Left Area -->
+    </section>
+</div>
+<!-- Page Content End -->
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

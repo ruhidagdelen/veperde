@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+   <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-60">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+<div class="container">
+    <div class="row">
+        <!-- Order Unorder List -->
+        <section class="page-content-area col-md-5 col-sm-12 mb-150">
+            <div class="container">
+                <div class="pt-35">
+                    <div class="list-style mb-25">
+                        <!-- Section Titel -->
+                        <div class="sml-titel">
+                            <h3>Yazılarım</h3>
+                        </div>
+                        {% if not request.user.critic_set.all %}
+
+                            <span>Henüz eleştiri yazınız yok.<br>
+                                <a class="text-info" href="{% url 'main:addCritic' %}">Buradan</a> yazı ekleyin
+                            </span>
+
+                        {% endif %}
+                        <!-- Section Titel -->
+                        <ul style="list-style: none">
+                            {% for critic in request.user.critic_set.all %}
+                                <li>
+                                    <div style="display:inline-flex">
+                                        <div>
+                                            <span><a href="{% url 'main:critic_detail' critic.id %}">{{ critic.title }}
+                                            </a></span>
+                                        </div>
+                                        <div class="post-titel-author">
+                                            {% if not critic.is_approved %}
+                                                <span> - Onay Bekliyor - <a
+                                                        href="{% url 'main:updateCritic' critic.id %}">Düzenle</a> </span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <!-- Order Unorder List -->
+            </div>
+        </section>
+        <section class="page-content-area mb-150">
+            <div class="container">
+                <div class="col-md-7 col-sm-12 pt-35">
+                    <h3>Hoşgeldin {{ request.user.username }}</h3>
+                    <h3>Bilgilerini Düzenle</h3>
+                    <form action="." method="POST">{% csrf_token %}
+                        <fieldset>
+                            E-mail:<br>
+                            <input type="text" name="email" maxlength="{{ form.email.field.max_length }}"
+                                   value="{{ request.user.email|stringformat:'s' }}"
+                            ><br><br>
+                            <div class="form-button mtb-15">
+                                <button type="submit">GÜNCELLE</button>
+                                <button onclick="location.href={% url 'password_reset_recover' %}" type="button">ŞİFREMİ
+                                    SIFIRLA
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

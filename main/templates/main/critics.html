@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+    <div class="veperdebanner col-md-12 col-sm-12 pl-0 pr-0 mb-90">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+    </div>
+    <section class="container pt-30 pb-120">
+        <div>
+            {% if request.user.is_superuser %}
+                <div class="mb-20">
+                    <h3><a href="{% url 'main:approveCritic' %}">Onay Bekleyen Eleştirileri Gör</a></h3>
+                </div>
+            {% endif %}
+            <div class="row">
+                <!-- Content Left Area -->
+                {% for critic in critics %}
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 pb-60">
+                        <div class="blog-img">
+                        <p style="font-size:20px; text-align: center;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;"><a href="{% url 'main:detail' critic.act.id %}">{{ critic.act.name }}</a></p>
+                            {% if critic.act.image %}
+                                <a href="{% url 'main:critic_detail' critic.id %}"><img src="{{ critic.act.image.url }}" class="img-responsive" alt=""/></a>
+                            {% else %}
+                                <a href="{% url 'main:critic_detail' critic.id %}"><img src="{% static 'img/blog/home-3/small/1.jpg' %}" class="img-responsive" alt=""/></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-6 pb-60">
+                        <div class="post-content">
+                            <div class="post-title-author pb-5" style="padding-top: 38px;">
+                                <h4><span style="white-space: nowrap; overflow: hidden; text-overflow:ellipsis; font-weight:bold;"><a href="{% url 'main:critic_detail' critic.id %}">{{ critic.title }}</a></span><span>
+                                    <small> / {{ critic.editor.username }} / {{ critic.get_pub_date }}
+                                {% if request.user.is_superuser %}
+                                    <a href="{% url 'main:deleteCritic' critic.id %}"> - sil</a>
+                                    <a href="{% url 'main:updateCritic' critic.id %}"> - güncelle</a>
+                                {% endif %}
+                                    </small>
+                                </span></h4>
+                            </div>
+                            <p class="border-bottom">{{ critic.get_long_text|safe }} <a class="pull-right" href="{% url 'main:critic_detail' critic.id %}">Devamını oku</a></p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="pagination">
+            {% if critics.has_other_pages %}
+                <ul class="pagination">
+                    {% if critics.has_previous %}
+                        <li><a href="?page={{ critics.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for i in critics.paginator.page_range %}
+                        {% if critics.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if critics.has_next %}
+                        <li><a href="?page={{ critics.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+
+    </section>
+</div>
+<!-- Page Content End -->
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>

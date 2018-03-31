@@ -1,0 +1,740 @@
+/*-----------------------------------------------------------------------------------
+
+    Template Name: LIRA
+    Template URI: https://devitems.com/html/lira-preview/
+    Description: This is html5 template
+    Author: BootExperts
+    Author URI: https://devitems.com/
+    Version: 1.0
+
+-----------------------------------------------------------------------------------
+
+    CSS INDEX
+    ===================
+
+    1. Google Fonts
+	2. Post Content Css
+	3. Social Icon & Category List
+	4. Newsletter Form
+	5. Popular Post
+	6. Archive Css
+	7. Banner Add Area
+	8. Latest Twites Post
+	9. Photo gallery
+	10. Pager Pagination
+	11. Footer Css
+	12. Middle Banner Home Three
+	13. Home Five Page
+	14. About Us Page
+	15. Features Page
+	16. Standard Post Page
+	17. Slide Post Page
+	18. Gallery Post Page
+	19. Contact Us Page
+	20. Error 404 Page
+	21. ScrollUp
+
+-----------------------------------------------------------------------------------*/
+/*----------  1. Google Fonts ----------*/
+	@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,400,600,700,800|Roboto:300,400,500,600,700');
+
+/*---------- 2. Post Content Css ----------*/
+.container{width:1200px}
+.blog-img {
+  display: block;
+  position: relative;
+}
+.pst-titel a{
+  background: #fafafa none repeat scroll 0 0;
+  bottom: -12px;
+  color: #a1a1a1;
+  font-size: 12px;
+  font-weight: 600;
+  height: 25px;
+  left: 0;
+  line-height: 27px;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  width: 120px;
+}
+.pst-titel a:hover,.blog-ph .pst-titel a:hover{color:#666;}
+.post-titel-author h3 a:hover{color:#666;}
+.post-titel-author > span,.post-txt a {
+  color: #a1a1a1;
+  font-family: open sans;
+  font-size: 12px;
+}
+.post-titel-author > span a {
+  color: #707070;
+  font-weight: 700;
+}
+.post-titel-author > span a:hover,.post-srt-content > a:hover,.post-txt a:hover,.social-middle ul li a:hover,.category-list ul li a:hover,.twist-single ul li a:hover{color:#383838;}
+.post-srt-content > a {
+  color: #a1a1a1;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease 0s;
+  overflow: hidden;
+}
+.post-srt-content > a i {
+  margin-left: 6px;
+}
+.post-srt-content > p {
+  height: 70px;
+  width: 650px;
+  overflow: hidden;
+}
+.post-txt a{
+  font-family:"Poppins",sans-serif;
+  transition:.3s;
+}
+.post-txt a i {
+  margin-right: 6px;
+}
+.embed-responsive {
+  overflow: initial;
+}
+/*---------- 3. Social Icon & Category List ----------*/
+.social-middle ul li a {
+  padding: 6px 16px;
+}
+.about-info > p {
+  margin: 0 0 10px;
+}
+.about-area .about-info > p {
+  margin: 0 0 10px;
+  padding: 0 10%;
+}
+.category-list li {
+  display: block;
+}
+.category-list ul li a {
+  color: #606060;
+  display: block;
+  font-family: open sans;
+  padding: 10px 0;
+}
+.category-list ul li a span {
+  float: right;
+}
+.category-list li:last-child {
+  padding-bottom: 10px;
+}
+/*---------- 4. Newsletter Form ----------*/
+.newsletter-form {
+  display: block;
+  position: relative;
+}
+.newsletter-form input {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #e9e9e9;
+}
+.newsletter-form form button {
+  background: #ebebeb none repeat scroll 0 0;
+  border: 0 none;
+  color: #a1a1a1;
+  font-size: 16px;
+  padding: 11px 15px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+/* Mail Chimp */
+.mailchimp-alerts {
+  padding: 10px 0;
+}
+.mailchimp-submitting{color:#31708f}
+.mailchimp-success{color:#3c763d;}
+.mailchimp-error{color:#a94442;}
+/*---------- 5. Popular Post ----------*/
+.popular-single {
+  display: block;
+  overflow: hidden;
+}
+.popular-img {
+  display: block;
+  float: left;
+  overflow: hidden;
+}
+.popular-content {
+  overflow: hidden;
+  padding-left: 15px;
+  padding-top: 2px;
+}
+.popular-content h5 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+.post-date {
+  color: #a1a1a1;
+  display: block;
+  font-family: open sans;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 5px 0 3px;
+}
+.popular-content > p {
+  line-height: 19px;
+  margin: 0;
+}
+/*---------- 6. Archive Css ----------*/
+.archive-select {
+  display: block;
+  position: relative;
+}
+.archive-select::after {
+  background: #ebebeb none repeat scroll 0 0;
+  color: #a1a1a1;
+  content: "";
+  font-family: fontawesome;
+  font-size: 16px;
+  height: 45px;
+  line-height: 45px;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 9px;
+  width: 45px;
+  z-index: -999;
+}
+.archive-select select {
+  -moz-appearance: none;
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #e9e9e9;
+  box-shadow: none;
+  color: #626262;
+  font-size: 14px;
+  height: 45px;
+  padding-left: 10px;
+  width: 100%;
+}
+/*---------- 7. Banner Add Area ----------*/
+.add-img a img,.middle-banner img,.blog-img img {
+  width: 100%;
+}
+.add-img > a {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.add-text {
+  background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+  content: "";
+  display: block;
+  height: 85%;
+  left: 0;
+  margin: 0 auto;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 25px;
+  transition: all 0.4s ease 0s;
+  width: 85%;
+  transform:rotate(-46deg)
+}
+.add-text > p {
+  color: #fff;
+  font-family: poppins;
+  font-size: 20px;
+  font-weight: 500;
+  left: 0;
+  line-height: 25px;
+  margin: 0;
+  padding: 0 28%;
+  position: absolute;
+  right: 0;
+  top: 35%;
+}
+.add-img:hover .add-text{opacity:1;transform:rotate(0deg)}
+/*---------- 8. Latest Twites Post ----------*/
+.twist-single ul li a {
+  color: #a1a1a1;
+  font-family: open sans;
+  font-size: 12px;
+  font-weight: 600;
+}
+.twist-single > p {
+  margin: 0 0 5px;
+}
+.twist-single p a {
+  font-weight: 600;
+}
+/*---------- 9. Photo gallery ----------*/
+.gallery-single > ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+.gallery-single li {
+  padding-bottom: 7px;
+  padding-left: 0;
+  width: 32%;
+}
+.gallery-single img {
+  width: 100%;
+}
+.tag-area ul li a {
+  border: 1px solid #ebebeb;
+  color: #606060;
+  display: block;
+  font-family: open sans;
+  margin: 0 7px 10px 0;
+  padding: 5px 10px;
+}
+.tag-area ul li a:hover{background:#ebebeb;border-color:#ebebeb;}
+/*---------- 10. Pager Pagination ----------*/
+.pager {
+  margin: 0;
+}
+.pager li > a {
+  background: transparent none repeat scroll 0 0;
+  border: medium none;
+  color: #a1a1a1;
+  display: inline-block;
+  font-family: poppins;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  padding: 0;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.pager li > a:hover{background:transparent;color:#383838;}
+.pager li:first-child > a {
+  float: left;
+}
+.pager li:last-child a{
+  float: right;
+}
+.pager li:first-child a i {
+  padding-right: 10px;
+}
+.pager li:last-child a i {
+  padding-left: 10px;
+}
+.footer-gallery{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+/*---------- 11. Footer Css  ----------*/
+.footer-bottom-area {
+  display: block;
+  overflow: hidden;
+}
+.footer-bottom-right > p {
+  color: #686868;
+  font-size: 13px;
+  margin: 0;
+}
+.footer-bottom-right > p a{color:#686868;transition:.3s;}
+.footer-menu ul li a {
+  color: #999;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 25px 15px;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+}
+.footer-bottom-right > p a:hover,.footer-menu ul li a:hover{color:#fff;}
+/*---------- 12. Middle Banner Home Three ----------*/
+.middle-banner {
+  display: block;
+  overflow: hidden;
+}
+.left-bnr-cnt {
+  background: rgba(0, 0, 0, 0.4) none repeat scroll 0 0;
+  float: left;
+  margin: 20px 0 20px 37px;
+  padding: 30px 0;
+  text-align: center;
+  width: 560px;
+}
+.left-bnr-cnt h2 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+}
+.right-bnr-cnt a {
+  color: #fff;
+  display: block;
+  float: right;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 130px;
+  padding: 53px 0;
+}
+.blog-ph {
+  display: block;
+  float: left;
+  margin-right: 25px;
+  position: relative;
+}
+/*---------- 13. Home Five Page ----------*/
+.custom-container {
+  width: 1215px;
+}
+.post-content {
+  display: block;
+  overflow: hidden;
+}
+.blog-ph .pst-titel {
+  left: 0;
+  position: absolute;
+}
+.blog-ph .pst-titel a {
+  background: #fafafa none repeat scroll 0 0;
+  color: #a1a1a1;
+  font-size: 12px;
+  font-weight: 600;
+  height: 25px;
+  left: -88px;
+  line-height: 27px;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 120px;
+  transform: rotate(-90deg);
+  width: 120px;
+}
+/*---------- 14. About Us Page ----------*/
+.social-middle.two {
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.social-middle.two::after {
+  border-bottom: 1px solid #ddd;
+  bottom: 0;
+  content: "";
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  width: 285px;
+}
+.about-content blockquote,.post-srt-content blockquote{
+  background: #f1f1f1 none repeat scroll 0 0;
+  border-left: 5px solid #d4d4d4;
+  font-size: 16px;
+  margin: 35px 0;
+  padding: 38px 30px;
+}
+.about-content blockquote p,.post-srt-content blockquote p {
+  color: #606060;
+  font-size: 16px;
+  font-style: italic;
+  line-height: 28px;
+}
+.author-titel {
+  display: block;
+  margin-top: 38px;
+  overflow: hidden;
+  position: relative;
+}
+.author-titel > h5 {
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-left: 100px;
+}
+.author-titel::after {
+  background: #ddd none repeat scroll 0 0;
+  content: "";
+  height: 2px;
+  left: 0;
+  position: absolute;
+  top: 8px;
+  width: 80px;
+}
+.as-titel > h4 {
+  font-size: 22px;
+  margin-bottom: 35px;
+}
+/*---------- 15. Features Page ----------*/
+.per-contnt {
+  float: left;
+  width: 64%;
+}
+.per-img {
+  display: block;
+  overflow: hidden;
+  width: 36%;
+}
+.per-contnt > p:last-child {
+  margin: 0;
+}
+.sml-titel h3 {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
+
+.fres-single {
+  width: 25%;
+  float:left;
+}
+.list-style {
+  float: left;
+  width: 50%;
+}
+.list-style > ul, ol {
+  margin: 0;
+  padding-left: 15px;
+}
+.list-style li {
+  color: #606060;
+  display: list-item;
+  font-family: open sans;
+  font-size: 14px;
+  list-style: unset;
+  margin: 0 0 15px;
+}
+.list-style li:last-child {
+  margin: 0;
+}
+/*---------- 16. Standard Post Page ----------*/
+.page-content-area .owl-theme .owl-dots .owl-dot span,.main-slide-area-two .owl-theme .owl-dots .owl-dot span {
+  background: #ebebeb none repeat scroll 0 0;
+}
+.page-content-area .owl-theme .owl-dots .owl-dot.active span, .page-content-area .owl-theme .owl-dots .owl-dot:hover span,.main-slide-area-two .owl-theme .owl-dots .owl-dot.active span, .main-slide-area-two .owl-theme .owl-dots .owl-dot:hover span {
+  background: #d1d1d1 none repeat scroll 0 0;
+  height: 12px;
+  width: 12px;
+}
+.page-content-area .owl-theme .owl-nav.disabled + .owl-dots {
+  margin-top: 45px;
+}
+.form-single input {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: none;
+  float: left;
+  height: 40px;
+  margin-bottom: 30px;
+}
+.form-textarea {
+  clear: both;
+}
+.form-textarea textarea {
+  background: transparent none repeat scroll 0 0;
+  border: 1px solid #ddd;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+.form-button button {
+  background: #303030 none repeat scroll 0 0;
+  border: medium none;
+  box-shadow: none;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  height: 40px;
+  overflow: hidden;
+  text-transform: uppercase;
+  width: 20%;
+}
+.form-button button:hover {
+  background: #000 none repeat scroll 0 0;
+}
+p.form-messege {
+  font-size: 20px;
+  margin-top: 15px;
+  margin-bottom: 0;
+  margin: 0;
+}
+p.success {
+  color: green;
+}
+p.error {
+  color: red;
+}
+/*---------- 17. Slide Post Page ----------*/
+.slide-post .pst-titel a {
+  bottom: 0;
+}
+.slide-post .owl-theme .owl-nav [class*="owl-"] {
+  background: #555555 none repeat scroll 0 0;
+  border-radius: 0;
+  color: #c0c0c0;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  height: 45px;
+  line-height: 36px;
+  margin: 0;
+  padding: 4px 7px;
+  text-align: center;
+  width: 30px;
+}
+.slide-post .owl-theme .owl-nav [class*="owl-"]:hover{background:#000;color:#fff;}
+.slide-post .owl-prev {
+  left: 20px;
+  position: absolute;
+  text-align: left;
+}
+.slide-post .owl-next {
+  position: absolute;
+  right: 20px;
+  text-align: right;
+}
+.slide-post .owl-theme .owl-nav {
+  position: absolute;
+  text-align: left;
+  top: 44%;
+  width: 100%;
+}
+.slide-post .owl-theme .owl-nav {
+  margin-top: 0;
+}
+/*---------- 18. Gallery Post Page ----------*/
+.custom-row {
+  margin: 0;
+}
+.column-4 {
+  float: left;
+  overflow: hidden;
+  padding-right: 0px;
+  position: relative;
+  width: 33.33%;
+}
+.gp-img {
+  cursor: pointer;
+  display: block;
+  overflow: hidden;
+  position: relative;
+}
+.gp-hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  overflow:hidden;
+  transition: all 0.3s ease-in-out 0.2s;
+  opacity:0;
+  display:block;
+}
+.gallery-post-single:hover .gp-hover {
+  opacity: 1;
+  transition-delay: 0s;
+}
+.gp-hover h4 {
+  color: #d6d0d0;
+  font-size: 18px;
+  font-weight: 600;
+  left: 30px;
+  margin: 0;
+  position: relative;
+  text-transform: uppercase;
+  top: 0;
+  transform: translateY(250px);
+  transition: all 0.3s ease 0s;
+}
+.gallery-post-single:hover .gp-hover h4{
+  transform: translateY(200px);
+  transition-delay: 0.2s;
+}
+.gp-hover a {
+  color: #d6d0d0;
+  font-size: 30px;
+  height: 50px;
+  left: 0;
+  line-height: 50px;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 40%;
+  transform: scale(0);
+  transition: all 0.3s ease 0s;
+  width: 50px;
+}
+.gallery-post-single:hover .gp-hover a{transform:scale(1);}
+/*---------- 19. Contact Us Page ----------*/
+.contact-single {
+  display: block;
+  float: left;
+  padding-right: 25px;
+  width: 33.33%;
+}
+.contact-contnt > p {
+  margin: 0;
+}
+.cntct-adrs i {
+  color: #606060;
+  display: block;
+  float: left;
+  font-size: 24px;
+  line-height: 45px;
+  margin-right: 15px;
+}
+.cntct-adrs > p {
+  display: block;
+  margin: 0;
+  overflow: hidden;
+}
+/*---------- 20. Error 404 Page ----------*/
+.notfound_content h1 {
+  font-size: 180px;
+  font-weight: 600;
+}
+.notfound_content h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  margin-top: 50px;
+}
+.notfound_content h4 {
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+.notfound_content p {
+  font-size: 18px;
+  line-height: 30px;
+  margin-bottom: 48px;
+  padding: 0 30%;
+}
+.notfound_content a.back_to {
+  background: #303030 none repeat scroll 0 0;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 12px 25px;
+  text-transform: uppercase;
+  transition: all 0.5s ease 0s;
+}
+.notfound_content a.back_to:hover {
+  background: #000000 none repeat scroll 0 0;
+}
+/*---------- 21. ScrollUp ----------*/
+#scrollUp {
+  background: #303030 none repeat scroll 0 0;
+  border-radius: 0px;
+  bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  color: #fff;
+  font-size: 28px;
+  height: 40px;
+  line-height: 35px;
+  position: fixed;
+  right: 15px;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  width: 40px;
+  z-index: 200;
+}
+#scrollUp:hover{background:#212121;}

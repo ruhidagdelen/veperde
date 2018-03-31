@@ -1,0 +1,146 @@
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    overflow-x: hidden;
+    padding-top: 5px;
+    border-right: 1px solid black;
+}
+
+.sidenav button {
+    padding: 0 8px 8px 32px;
+    text-decoration: none;
+    width: 150px;
+    font-size: 14px;
+    color: #818181;
+    display: block;
+    background: none;
+    border: none;
+}
+
+.sidenav button:hover {
+    color: #000;
+    background-color: #f1f1f1;
+}
+
+.tabcontent {
+    padding-left: 25%;
+    display: none;
+}
+
+.tabcontent form {
+    width: 40%;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .sidenav {
+        height: 25%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid black;
+
+    }
+
+    .sidenav button {
+        font-size: 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* iPhone 5 ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    .sidenav {
+        height: 40%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid black;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .sidenav button {
+        font-size: 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #sticky-header {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-height: 568px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .sidenav {
+        height: 30%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid black;
+    }
+
+    /*iPhone 6 ---------- */
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2) {
+    .sidenav {
+        height: 25%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid black;
+
+    }
+
+    .sidenav button {
+        font-size: 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-height: 667px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2) {
+    .sidenav {
+        height: 37%;
+    }
+}
+
+/* Samsung Galaxy S5 ----------- */
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 3) {
+    .sidenav {
+        height: 40%;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid black;
+        position: fixed;
+        z-index: 999;
+    }
+
+    .sidenav button {
+        font-size: 20px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #sticky-header {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-height: 640px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 3) {
+    .sidenav {
+        height: 26%;
+    }
+}

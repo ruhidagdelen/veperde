@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="container">
+    <div class="contact-form mtb-60">
+        <form id="contact-form" class="form-group" method="POST" action=".">{% csrf_token %}
+            <div class="col-md-12 pb-30">
+            {{ form.as_p }}
+                <div class="form-button">
+                    <button class="contact-submit" type="submit">kaydet</button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+{% include 'main/includes/footer.html' %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('textarea').each( function () {
+            CKEDITOR.replace( this.id );
+        });
+        CKEDITOR.config.removePlugins = 'elementspath,save,image,flash,iframe,link,smiley,tabletools,find,pagebreak,templates,about,maximize,showblocks,newpage,language';
+    });
+</script>
+</body>
+</html>

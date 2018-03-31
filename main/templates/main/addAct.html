@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+
+</head>
+<body>
+{% load staticfiles %}
+<div class="container centered">
+    <h1 class="text-center"> Oyun Ekle</h1>
+    <div class="contact-form mtb-60">
+        {% block content %}
+            <div class="col-md-5 col-md-offset-2 col-sm-12 col-xs-12 mb-60">
+                <form id="contact-form" class="form-group" method="POST" action=".">
+                    {% csrf_token %}
+                    <div>
+                        <div class="form-group">
+                            <label for="communityId">Topluluk Seç*</label>
+                            <select name="communityId" required id="communityId" class="form-control mb-15">
+                                {% for comun in communitys %}
+                                    <option value="{{ comun.id }}" {% if community and comun.id == community.id %}selected="selected"{% endif %}>{{ comun.name|capfirst }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Oyun Adı*</label>
+                            <input type="text"
+                                   class="form-control"
+                                   name="actName"
+                                   id="actName" required>
+                        </div>
+                        <div class="form-button mt-20">
+                            <button class="contact-submit" type="submit">Kaydet</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-group col-md-3 col-sm-12 col-xs-12 mb-60">
+                <span>Aradığınız topluluk listede yoksa buradan ekleyebilirsiniz:</span>
+                <form class="mt-20 pb-100" method="POST">
+                    {% csrf_token %}
+                    <label for="community">Topluluk Adı:</label>
+                    <input type="text" name="name" id="comTitle">
+                    <div class="form-button mtb-20">
+                        <button class="contact-submit" type="submit">ekle</button>
+                    </div>
+                </form>
+            </div>
+
+        {% endblock %}
+    </div>
+
+</div>
+
+{% include 'main/includes/footer.html' %}
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        CKEDITOR.replace('text');
+        CKEDITOR.config.removePlugins = 'elementspath,save,image,flash,iframe,link,smiley,tabletools,find,pagebreak,templates,about,maximize,showblocks,newpage,language';
+    });
+</script>
+
+</body>
+</html>

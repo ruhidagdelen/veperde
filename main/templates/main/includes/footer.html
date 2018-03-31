@@ -1,0 +1,59 @@
+{% load staticfiles %}
+<!-- Start footer area -->
+<footer class="footer-area">
+    <!-- Footer Bottom Area Start -->
+    <div class="footer-bottom container-fluid plr-80 light-black-bg">
+        <div class="row">
+            <div class="footer-bottom-area ptb-30">
+                <div class="col-md-4 col-sm-12 col-xs-12">
+                    <div class="footer-bottom-right">
+                        <p>Copyright &copy; 2017 <a href="http://veperde.com/">VEPERDE</a> All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="col-md-8 text-right col-sm-12 col-xs-12">
+                    <div class="footer-menu">
+                        <nav>
+                            <ul>
+                                <li><a href="{% url 'main:index' %}">ANASAYFA</a></li>
+                                <li><a href="{% url 'main:critic' %}">ELEŞTİRİLER</a></li>
+                                <li><a href="{% url 'main:acts' %}">OYUNLAR</a></li>
+                                {% if request.user.is_authenticated %}
+                                    <li><a href="{% url 'main:addUser' %}">HAKKIMIZDA</a>
+                                    </li>
+                                {% endif %}
+                                {% if not request.user.is_authenticated %}
+                                    <li><a href="{% url 'main:addUser' %}">YAZAR OLUN</a></li>
+                                {% endif %}
+                                {% if request.user.is_authenticated %}
+                                    <li><a href="{% url 'main:profile' %}">PROFİLİM</a>
+                                        <a href="{% url 'logout' %}">ÇIKIŞ YAP</a></li>
+                                {% endif %}
+                                {% if not request.user.is_authenticated %}
+                                    <li><a href="{% url 'login' %}">GİRİŞ YAP</a></li>
+                                    <li><a href="{% url 'main:addUser' %}">KAYDOL</a></li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer Bottom Area End -->
+</footer>
+<!-- End footer area -->
+<!-- all js here -->
+<script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/wow.min.js' %}"></script>
+<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'js/jquery.nivo.slider.pack.js' %}"></script>
+<script src="{% static 'js/jquery.meanmenu.js' %}"></script>
+<script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+<script src="{% static 'js/plugins.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>

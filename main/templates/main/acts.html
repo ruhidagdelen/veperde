@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+    {% include 'main/includes/header.html' %}
+</head>
+<body>
+{% load staticfiles %}
+<div class="wrapper">
+<div class="veperdebanner container pl-0 pr-0 pb-40" style="width:100%">
+        <img src="{% static 'img/bg/banner-deneme.png' %}" height="250px"/>
+</div>
+
+<!-- Main Slide Top Area Start -->
+<section class="container mt-60 pb-120">
+    <div class="row">
+        <!-- Content Left Area -->
+        <div class="grid">
+            {% for act in acts %}
+                <!-- Blog Small Image Single Item -->
+                <div class="grid-item col-md-4 col-sm-12">
+                    <div class="blog-single-post pb-60">
+
+                        <div class="blog-img">
+                            {% if act.image %}
+                                <a href="{% url 'main:detail' act.id %}"><img
+                                        src="{{ act.image.url }}" alt="" height="235px" width="370px"/></a>
+                            {% endif %}
+                            {% if not act.image %}
+                                <a href="{% url 'main:detail' act.id %}"><img
+                                        src="{% static 'img/blog/home-3/small/1.jpg' %}" alt=""/></a>
+                            {% endif %}
+                        </div>
+                        <div class="post-content">
+                            <div class="post-srt-content pb-20">
+                                <div class="post-titel-author pt-15 pb-5">
+                                    <h4 class="text-uppercase"><a href="{% url 'main:detail' act.id %}">{{ act.name }}</a></h4>
+                                    {% if request.user.is_superuser %}
+                                        <a href="{% url 'main:changeAct' act.id %}">Düzenle</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Blog Small Image Single Item -->
+                </div>
+            {% endfor %}
+            <!-- Pager Previous Next Button -->
+        </div>
+        <div class="pagination">
+            {% if acts.has_other_pages %}
+                <ul class="pagination">
+                    {% if acts.has_previous %}
+                        <li><a href="?page={{ acts.previous_page_number }}">&laquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&laquo;</span></li>
+                    {% endif %}
+                    {% for i in acts.paginator.page_range %}
+                        {% if acts.number == i %}
+                            <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+                        {% else %}
+                            <li><a href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if acts.has_next %}
+                        <li><a href="?page={{ acts.next_page_number }}">&raquo;</a></li>
+                    {% else %}
+                        <li class="disabled"><span>&raquo;</span></li>
+                    {% endif %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- Page Content End -->
+</div>
+
+
+{% include 'main/includes/footer.html' %}
+
+</body>
+</html>
